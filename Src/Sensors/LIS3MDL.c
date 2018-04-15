@@ -7,22 +7,34 @@
 
 
 #include "Sensors/LIS3MDL.h"
+#include "sensors.h"
+#include "cmsis_os.h"
 int16_t magBias[3];
 int16_t calData[3];
 
 uint8_t LIS3MDL_UpdateCmd(uint8_t reg, uint8_t value)
 {
 	uint8_t tempData = value;
+	xSemaphoreTake(I2CMutex,10);
 	if(HAL_I2C_Mem_Read_DMA(&hi2c1,LIS3MDL_ADDR_8BIT,reg,I2C_MEMADD_SIZE_8BIT,&tempData,sizeof(reg)) == HAL_OK)
 	{
-		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {}
+		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
+			vTaskDelay(1);
+		}
 		tempData |= value;
 	}
 	if (HAL_I2C_Mem_Write_DMA(&hi2c1,LIS3MDL_ADDR_8BIT,reg,I2C_MEMADD_SIZE_8BIT,&tempData,sizeof(reg)) != HAL_OK)
+	{
+		xSemaphoreGive(I2CMutex);
 		return 1;
+	}
+
 	else
 	{
-		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {}
+		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
+			vTaskDelay(1);
+		}
+		xSemaphoreGive(I2CMutex);
 		return 0;
 	}
 
@@ -30,14 +42,19 @@ uint8_t LIS3MDL_UpdateCmd(uint8_t reg, uint8_t value)
 
 uint8_t LIS3MDL_WriteCmd(uint8_t reg, uint8_t value)
 {
+	xSemaphoreTake(I2CMutex,10);
 
 	if (HAL_I2C_Mem_Write_DMA(&hi2c1,LIS3MDL_ADDR_8BIT,reg,I2C_MEMADD_SIZE_8BIT,&value,sizeof(reg)) != HAL_OK)
 	{
+		xSemaphoreGive(I2CMutex);
 		return 1;
 	}
 		else
 				{
-					while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {}
+					while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
+						vTaskDelay(1);
+					}
+					xSemaphoreGive(I2CMutex);
 					return 0;
 				}
 }
@@ -45,12 +62,19 @@ uint8_t LIS3MDL_WriteCmd(uint8_t reg, uint8_t value)
 uint8_t LIS3MDL_ReadCmd(uint8_t reg)
 {
 	uint8_t readData;
+	xSemaphoreTake(I2CMutex,10);
 
 	if (HAL_I2C_Mem_Read_DMA(&hi2c1,LIS3MDL_ADDR_8BIT,reg,I2C_MEMADD_SIZE_8BIT,&readData,sizeof(reg)) != HAL_OK)
-			return 1;
+	{
+		xSemaphoreGive(I2CMutex);
+		return 1;
+	}
 		else
 		{
-			 while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {}
+			 while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
+				 vTaskDelay(1);
+			 }
+			 xSemaphoreGive(I2CMutex);
 			 return readData;
 		}
 

@@ -11,17 +11,30 @@
 #include "dma.h"
 #include "sensors.h"
 #include "gpio.h"
-LSM6DS33_DATA readData;
+
 void AccGyroTaskEntry(void const * argument)
 {
-
+	LSM6DS33_DATA accGyroData;
 	while(1)
 	{
 
-		readData = LSM6DS33_Read();
+		accGyroData = LSM6DS33_Read();
 
+		xQueueSend(AccGyroDataQueueHandle,&accGyroData,1000);
+		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);
+		vTaskDelay(50);
+	}
+}
 
-		//xQueueSend(AccGyroDataQueueHandle,&readData,1000);
+void MagTaskEntry(void const * argument)
+{
+	LIS3MDL_DATA magData;
+	while(1)
+	{
+
+		magData = LIS3MDL_Read();
+
+		xQueueSend(MagDataQueueHandle,&magData,1000);
 		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);
 		vTaskDelay(50);
 	}

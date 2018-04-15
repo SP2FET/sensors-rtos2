@@ -22,16 +22,18 @@ uint8_t LSM6DS33_WriteCmd(uint8_t reg, uint8_t value) {
 
 	else {
 		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
-			xSemaphoreGive(I2CMutex);
+
 			vTaskDelay(1);
 		}
 
+		xSemaphoreGive(I2CMutex);
 
 		return 0;
 	}
 }
 uint8_t LSM6DS33_UpdateCmd(uint8_t reg, uint8_t value) {
 	uint8_t tempData = value;
+	xSemaphoreTake(I2CMutex, 10);
 	if (HAL_I2C_Mem_Read_DMA(&hi2c1, LSM6DS33_ADDR_8BIT, reg,
 			I2C_MEMADD_SIZE_8BIT, &tempData, sizeof(reg)) == HAL_OK) {
 		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
@@ -42,12 +44,18 @@ uint8_t LSM6DS33_UpdateCmd(uint8_t reg, uint8_t value) {
 	}
 	if (HAL_I2C_Mem_Write_DMA(&hi2c1, LSM6DS33_ADDR_8BIT, reg,
 			I2C_MEMADD_SIZE_8BIT, &tempData, sizeof(reg)) != HAL_OK)
+	{
+		xSemaphoreGive(I2CMutex);
+
 		return 1;
+	}
 	else {
 		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
 			vTaskDelay(1);
 
 		}
+		xSemaphoreGive(I2CMutex);
+
 		return 0;
 	}
 

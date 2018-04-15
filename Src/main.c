@@ -58,6 +58,7 @@
 /* USER CODE BEGIN Includes */
 #include "sensors.h"
 #include "tasks.h"
+#include "eeprom.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -78,6 +79,7 @@ static void MX_NVIC_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+uint16_t VirtAddVarTab[NB_OF_VAR] = {0x0000, 0x0001, 0x0002,0x0003};
 
 /* USER CODE END 0 */
 
@@ -98,6 +100,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+  HAL_FLASH_Unlock();
 
   /* USER CODE END Init */
 
@@ -117,6 +120,7 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
+  EE_Init();
   SensorsInit();
 
   /* USER CODE END 2 */
