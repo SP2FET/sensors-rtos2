@@ -55,7 +55,12 @@ Src/main.o: ../Src/main.c /home/bartek/MEGAsync/sensors-rtos2/Inc/main.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/eeprom.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LSM6DS33.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/tasks.h \
- /home/bartek/MEGAsync/sensors-rtos2/Inc/I2CTask.h
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/I2CTask.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/MadgwickAHRS.h
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/main.h:
 
@@ -172,3 +177,13 @@ Src/main.o: ../Src/main.c /home/bartek/MEGAsync/sensors-rtos2/Inc/main.h \
 /home/bartek/MEGAsync/sensors-rtos2/Inc/tasks.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/I2CTask.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/MadgwickAHRS.h:

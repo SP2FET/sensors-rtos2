@@ -19,8 +19,8 @@ xSemaphoreHandle I2CMutex;
 
 inline void SensorsInit(void)
 {
-	AccGyroDataQueueHandle = xQueueCreate(2,sizeof(LSM6DS33_DATA));
-	MagDataQueueHandle = xQueueCreate(2,sizeof(LIS3MDL_DATA));
+	AccGyroDataQueueHandle = xQueueCreate(1,sizeof(LSM6DS33_DATA));
+	MagDataQueueHandle = xQueueCreate(1,sizeof(LIS3MDL_DATA));
 	I2CMutex = xSemaphoreCreateMutex();
 
 	  LSM6DS33_Init(ODR_416HZ,ODR_416HZ);

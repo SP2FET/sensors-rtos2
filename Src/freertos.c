@@ -60,6 +60,7 @@ osThreadId defaultTaskHandle;
 osThreadId AccGyroTaskHandle;
 osThreadId MagTaskHandle;
 osThreadId DebugLEDTaskHandle;
+osThreadId AHRSUpdateHandle;
 
 /* USER CODE BEGIN Variables */
 
@@ -70,6 +71,7 @@ void StartDefaultTask(void const * argument);
 extern void AccGyroTaskEntry(void const * argument);
 extern void MagTaskEntry(void const * argument);
 extern void DebugLEDTaskEntry(void const * argument);
+extern void AHRSUpdateTaskEntry(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -114,6 +116,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of DebugLEDTask */
   osThreadDef(DebugLEDTask, DebugLEDTaskEntry, osPriorityNormal, 0, 128);
   DebugLEDTaskHandle = osThreadCreate(osThread(DebugLEDTask), NULL);
+
+  /* definition and creation of AHRSUpdate */
+  osThreadDef(AHRSUpdate, AHRSUpdateTaskEntry, osPriorityAboveNormal, 0, 128);
+  AHRSUpdateHandle = osThreadCreate(osThread(AHRSUpdate), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

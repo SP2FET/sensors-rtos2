@@ -1,18 +1,18 @@
 /*
- * I2CTask.h
+ * AHRSTask.h
  *
- *  Created on: 31 mar 2018
+ *  Created on: 15 kwi 2018
  *      Author: bartek
  */
 
-#ifndef I2CTASK_H_
-#define I2CTASK_H_
+#ifndef AHRSTASK_H_
+#define AHRSTASK_H_
 
 #include "stm32f4xx_hal.h"
 #include "i2c.h"
 #include "dma.h"
 #include "sensors.h"
 #include "gpio.h"
+#include "MadgwickAHRS.h"
 
-
-#endif /* I2CTASK_H_ */
+#endif /* AHRSTASK_H_ */

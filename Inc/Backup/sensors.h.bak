@@ -24,7 +24,7 @@ inline void SensorsInit(void)
 	I2CMutex = xSemaphoreCreateMutex();
 
 	  LSM6DS33_Init(ODR_416HZ,ODR_416HZ);
-	  //LIS3MDL_Init(ODR_80HZ);
+	  LIS3MDL_Init(ODR_80HZ);
 }
 
 

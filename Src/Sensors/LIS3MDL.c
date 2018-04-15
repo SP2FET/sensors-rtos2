@@ -141,7 +141,7 @@ LIS3MDL_DATA LIS3MDL_Read(void)
 	LIS3MDL_DATA readData;
 	while(!(LIS3MDL_ReadCmd(LIS_STATUS_REG) && (1 << ZYXDA)))
 	{
-
+		vTaskDelay(1);
 	};
 
 		readData.magX = (LIS3MDL_ReadCmd(OUT_X_L)|(LIS3MDL_ReadCmd(OUT_X_H) << 8))- magBias[0];

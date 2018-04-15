@@ -82,7 +82,7 @@ uint8_t LSM6DS33_ReadCmd(uint8_t reg) {
 		return 1;
 	} else {
 		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
-			xSemaphoreGive(I2CMutex);
+			//xSemaphoreGive(I2CMutex);
 			vTaskDelay(1);
 			}
 		xSemaphoreGive(I2CMutex);

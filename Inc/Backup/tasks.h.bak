@@ -9,7 +9,7 @@
 #define TASKS_H_
 
 #include "I2CTask.h"
-
+#include "MadgwickAHRS.h"
 
 
 #endif /* TASKS_H_ */

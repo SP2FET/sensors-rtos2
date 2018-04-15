@@ -1,4 +1,5 @@
-Src/I2CTask.o: ../Src/I2CTask.c \
+Src/AHRSTask.o: ../Src/AHRSTask.c \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/AHRSTask.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/stm32f4xx_hal_conf.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/main.h \
@@ -29,6 +30,14 @@ Src/I2CTask.o: ../Src/I2CTask.c \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LIS3MDL.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/eeprom.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LSM6DS33.h \
  /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
  /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/FreeRTOSConfig.h \
@@ -46,14 +55,10 @@ Src/I2CTask.o: ../Src/I2CTask.c \
  /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h \
- /home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h \
- /home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h \
- /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LIS3MDL.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h \
- /home/bartek/MEGAsync/sensors-rtos2/Inc/eeprom.h \
- /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LSM6DS33.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/MadgwickAHRS.h
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/AHRSTask.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -115,6 +120,22 @@ Src/I2CTask.o: ../Src/I2CTask.c \
 
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
+/home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LIS3MDL.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/eeprom.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LSM6DS33.h:
+
 /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
@@ -149,18 +170,6 @@ Src/I2CTask.o: ../Src/I2CTask.c \
 
 /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 
-/home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h:
-
-/home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h:
-
-/home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h:
-
-/home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LIS3MDL.h:
-
 /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h:
-
-/home/bartek/MEGAsync/sensors-rtos2/Inc/eeprom.h:
-
-/home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LSM6DS33.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/MadgwickAHRS.h:

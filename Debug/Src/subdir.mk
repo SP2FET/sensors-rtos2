@@ -4,7 +4,9 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/AHRSTask.c \
 ../Src/I2CTask.c \
+../Src/MadgwickAHRS.c \
 ../Src/dma.c \
 ../Src/eeprom.c \
 ../Src/freertos.c \
@@ -19,7 +21,9 @@ C_SRCS += \
 ../Src/system_stm32f4xx.c 
 
 OBJS += \
+./Src/AHRSTask.o \
 ./Src/I2CTask.o \
+./Src/MadgwickAHRS.o \
 ./Src/dma.o \
 ./Src/eeprom.o \
 ./Src/freertos.o \
@@ -34,7 +38,9 @@ OBJS += \
 ./Src/system_stm32f4xx.o 
 
 C_DEPS += \
+./Src/AHRSTask.d \
 ./Src/I2CTask.d \
+./Src/MadgwickAHRS.d \
 ./Src/dma.d \
 ./Src/eeprom.d \
 ./Src/freertos.d \
