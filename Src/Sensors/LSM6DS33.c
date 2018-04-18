@@ -15,14 +15,15 @@ uint8_t LSM6DS33_WriteCmd(uint8_t reg, uint8_t value) {
 
 	if (HAL_I2C_Mem_Write_DMA(&hi2c1, LSM6DS33_ADDR_8BIT, reg,
 			I2C_MEMADD_SIZE_8BIT, &value, sizeof(reg)) != HAL_OK) {
-		xSemaphoreGive(I2CMutex);
-		return 1;
 
+		xSemaphoreGive(I2CMutex);
+		connectionLost = true;
+		return 1;
 	}
 
 	else {
 		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
-
+			xTimerStart(I2CTimeoutTimerHandle,10);
 			vTaskDelay(1);
 		}
 
@@ -42,15 +43,23 @@ uint8_t LSM6DS33_UpdateCmd(uint8_t reg, uint8_t value) {
 		}
 		tempData |= value;
 	}
+	else
+	{
+		xSemaphoreGive(I2CMutex);
+		connectionLost = true;
+		return 1;
+	}
+
 	if (HAL_I2C_Mem_Write_DMA(&hi2c1, LSM6DS33_ADDR_8BIT, reg,
 			I2C_MEMADD_SIZE_8BIT, &tempData, sizeof(reg)) != HAL_OK)
 	{
 		xSemaphoreGive(I2CMutex);
-
+		connectionLost = true;
 		return 1;
 	}
 	else {
 		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
+			xTimerStart(I2CTimeoutTimerHandle,10);
 			vTaskDelay(1);
 
 		}
@@ -79,11 +88,14 @@ uint8_t LSM6DS33_ReadCmd(uint8_t reg) {
 	if (HAL_I2C_Mem_Read_DMA(&hi2c1, LSM6DS33_ADDR_8BIT, reg,
 			I2C_MEMADD_SIZE_8BIT, &readData, sizeof(readData)) != HAL_OK) {
 		xSemaphoreGive(I2CMutex);
+		connectionLost = true;
 		return 1;
 	} else {
 		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
-			//xSemaphoreGive(I2CMutex);
+
+			xTimerStart(I2CTimeoutTimerHandle,10);
 			vTaskDelay(1);
+
 			}
 		xSemaphoreGive(I2CMutex);
 
@@ -137,10 +149,6 @@ uint8_t LSM6DS33_Init(uint8_t ODRSpeedXL, uint8_t ODRSpeedG) {
 
 LSM6DS33_DATA LSM6DS33_Read() {
 	LSM6DS33_DATA readData;
-
-
-
-
 
 		while (!(LSM6DS33_ReadCmd(STATUS_REG) && (1 << GDA))) {
 

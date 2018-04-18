@@ -52,6 +52,7 @@
 #include "cmsis_os.h"
 #include "dma.h"
 #include "i2c.h"
+#include "iwdg.h"
 #include "spi.h"
 #include "gpio.h"
 
@@ -108,7 +109,14 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+  if(__HAL_RCC_GET_FLAG(RCC_FLAG_IWDGRST) != RESET)
+   {
+     /* IWDGRST flag set: Turn LED1 on */
+	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);
 
+     /* Clear reset flags */
+     __HAL_RCC_CLEAR_RESET_FLAGS();
+   }
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -127,6 +135,7 @@ int main(void)
 
   /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
+	MX_IWDG_Init();
 
   /* Start scheduler */
   osKernelStart();
@@ -165,9 +174,10 @@ void SystemClock_Config(void)
 
     /**Initializes the CPU, AHB and APB busses clocks 
     */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = 16;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 8;

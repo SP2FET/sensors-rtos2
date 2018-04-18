@@ -118,7 +118,7 @@ void MX_FREERTOS_Init(void) {
   DebugLEDTaskHandle = osThreadCreate(osThread(DebugLEDTask), NULL);
 
   /* definition and creation of AHRSUpdate */
-  osThreadDef(AHRSUpdate, AHRSUpdateTaskEntry, osPriorityHigh, 0, 128);
+  osThreadDef(AHRSUpdate, AHRSUpdateTaskEntry, osPriorityAboveNormal, 0, 128);
   AHRSUpdateHandle = osThreadCreate(osThread(AHRSUpdate), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */

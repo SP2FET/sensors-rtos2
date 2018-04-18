@@ -1,0 +1,15 @@
+/*
+ * watchdog.h
+ *
+ *  Created on: 18 kwi 2018
+ *      Author: bartek
+ */
+
+#ifndef WATCHDOG_H_
+#define WATCHDOG_H_
+
+#include "stm32f4xx.h"
+#include "stm32f4xx_hal.h"
+
+
+#endif /* WATCHDOG_H_ */

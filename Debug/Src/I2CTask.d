@@ -24,6 +24,7 @@ Src/I2CTask.o: ../Src/I2CTask.c \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
@@ -53,7 +54,13 @@ Src/I2CTask.o: ../Src/I2CTask.c \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/eeprom.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LSM6DS33.h \
- /home/bartek/MEGAsync/sensors-rtos2/Inc/MadgwickAHRS.h
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/iwdg.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/MadgwickAHRS.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/I2CTask.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h
 
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -104,6 +111,8 @@ Src/I2CTask.o: ../Src/I2CTask.c \
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
@@ -163,4 +172,16 @@ Src/I2CTask.o: ../Src/I2CTask.c \
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LSM6DS33.h:
 
+/home/bartek/MEGAsync/sensors-rtos2/Inc/iwdg.h:
+
 /home/bartek/MEGAsync/sensors-rtos2/Inc/MadgwickAHRS.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/I2CTask.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h:

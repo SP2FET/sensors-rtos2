@@ -33,9 +33,9 @@ void AHRSUpdateTaskEntry(void const * argument)
 
 
 
-				HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);
+				//HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);
 
-		vTaskDelay(30);
+		vTaskDelay(10);
 	}
 }
 

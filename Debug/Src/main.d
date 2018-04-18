@@ -24,6 +24,7 @@ Src/main.o: ../Src/main.c /home/bartek/MEGAsync/sensors-rtos2/Inc/main.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
@@ -48,12 +49,14 @@ Src/main.o: ../Src/main.c /home/bartek/MEGAsync/sensors-rtos2/Inc/main.h \
  /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/iwdg.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/spi.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LIS3MDL.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/eeprom.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LSM6DS33.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/iwdg.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/tasks.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/I2CTask.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h \
@@ -114,6 +117,8 @@ Src/main.o: ../Src/main.c /home/bartek/MEGAsync/sensors-rtos2/Inc/main.h \
 
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h:
 
+/home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h:
+
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
@@ -162,6 +167,8 @@ Src/main.o: ../Src/main.c /home/bartek/MEGAsync/sensors-rtos2/Inc/main.h \
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h:
 
+/home/bartek/MEGAsync/sensors-rtos2/Inc/iwdg.h:
+
 /home/bartek/MEGAsync/sensors-rtos2/Inc/spi.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h:
@@ -173,6 +180,8 @@ Src/main.o: ../Src/main.c /home/bartek/MEGAsync/sensors-rtos2/Inc/main.h \
 /home/bartek/MEGAsync/sensors-rtos2/Inc/eeprom.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LSM6DS33.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/iwdg.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/tasks.h:
 

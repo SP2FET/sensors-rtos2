@@ -1,0 +1,11 @@
+/*
+ * watchdog.c
+ *
+ *  Created on: 18 kwi 2018
+ *      Author: bartek
+ */
+
+
+#include "watchdog.h"
+
+IWDG_HandleTypeDef IwdgHandle;

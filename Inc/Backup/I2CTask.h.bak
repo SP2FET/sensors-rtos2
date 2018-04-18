@@ -14,5 +14,6 @@
 #include "sensors.h"
 #include "gpio.h"
 
+#define MAX_CONNECTIONS_ATTEMPTS 5
 
 #endif /* I2CTASK_H_ */

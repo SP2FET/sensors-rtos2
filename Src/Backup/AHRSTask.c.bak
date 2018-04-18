@@ -30,9 +30,12 @@ void AHRSUpdateTaskEntry(void const * argument)
 				my = magData.magY ;
 				mz = magData.magZ ;
 				MadgwickAHRSupdate(gx,gy,gz,ax,ay,az,my,mx,mz);
+
+
+
 				HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);
 
-		vTaskDelay(20);
+		vTaskDelay(10);
 	}
 }
 

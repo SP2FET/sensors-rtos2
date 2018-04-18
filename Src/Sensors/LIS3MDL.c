@@ -19,19 +19,28 @@ uint8_t LIS3MDL_UpdateCmd(uint8_t reg, uint8_t value)
 	if(HAL_I2C_Mem_Read_DMA(&hi2c1,LIS3MDL_ADDR_8BIT,reg,I2C_MEMADD_SIZE_8BIT,&tempData,sizeof(reg)) == HAL_OK)
 	{
 		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
+			xTimerStart(I2CTimeoutTimerHandle,10);
 			vTaskDelay(1);
 		}
 		tempData |= value;
 	}
+	else
+	{
+		xSemaphoreGive(I2CMutex);
+		connectionLost = true;
+		return 1;
+	}
 	if (HAL_I2C_Mem_Write_DMA(&hi2c1,LIS3MDL_ADDR_8BIT,reg,I2C_MEMADD_SIZE_8BIT,&tempData,sizeof(reg)) != HAL_OK)
 	{
 		xSemaphoreGive(I2CMutex);
+		connectionLost = true;
 		return 1;
 	}
 
 	else
 	{
 		while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
+			xTimerStart(I2CTimeoutTimerHandle,10);
 			vTaskDelay(1);
 		}
 		xSemaphoreGive(I2CMutex);
@@ -47,11 +56,13 @@ uint8_t LIS3MDL_WriteCmd(uint8_t reg, uint8_t value)
 	if (HAL_I2C_Mem_Write_DMA(&hi2c1,LIS3MDL_ADDR_8BIT,reg,I2C_MEMADD_SIZE_8BIT,&value,sizeof(reg)) != HAL_OK)
 	{
 		xSemaphoreGive(I2CMutex);
+		connectionLost = true;
 		return 1;
 	}
 		else
 				{
 					while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
+						xTimerStart(I2CTimeoutTimerHandle,10);
 						vTaskDelay(1);
 					}
 					xSemaphoreGive(I2CMutex);
@@ -67,11 +78,13 @@ uint8_t LIS3MDL_ReadCmd(uint8_t reg)
 	if (HAL_I2C_Mem_Read_DMA(&hi2c1,LIS3MDL_ADDR_8BIT,reg,I2C_MEMADD_SIZE_8BIT,&readData,sizeof(reg)) != HAL_OK)
 	{
 		xSemaphoreGive(I2CMutex);
+		connectionLost = true;
 		return 1;
 	}
 		else
 		{
 			 while (HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY) {
+				 xTimerStart(I2CTimeoutTimerHandle,10);
 				 vTaskDelay(1);
 			 }
 			 xSemaphoreGive(I2CMutex);

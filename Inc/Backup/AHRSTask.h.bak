@@ -14,5 +14,6 @@
 #include "sensors.h"
 #include "gpio.h"
 #include "MadgwickAHRS.h"
+#include "math.h"
 
 #endif /* AHRSTASK_H_ */
