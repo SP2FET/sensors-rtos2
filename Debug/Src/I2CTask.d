@@ -48,6 +48,7 @@ Src/I2CTask.o: ../Src/I2CTask.c \
  /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/spi.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/sensors.h \
  /home/bartek/MEGAsync/sensors-rtos2/Inc/Sensors/LIS3MDL.h \
@@ -159,6 +160,8 @@ Src/I2CTask.o: ../Src/I2CTask.c \
 /home/bartek/MEGAsync/sensors-rtos2/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/i2c.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/spi.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h:
 

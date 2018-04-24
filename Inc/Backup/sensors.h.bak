@@ -12,6 +12,8 @@
 #include "Sensors/LSM6DS33.h"
 #include "cmsis_os.h"
 #include "stdbool.h"
+#include "iwdg.h"
+
 
 extern void I2CTimeoutTimerCallback(TimerHandle_t xTimer);
 
@@ -35,6 +37,8 @@ inline void SensorsInit(void)
 	//xTimerStart(I2CTimeoutTimerHandle,10);
 	LSM6DS33_Init(ODR_416HZ,ODR_416HZ);
 	LIS3MDL_Init(ODR_80HZ);
+	  __HAL_IWDG_START(&hiwdg);
+
 
 }
 

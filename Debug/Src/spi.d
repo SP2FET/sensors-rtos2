@@ -30,7 +30,8 @@ Src/spi.o: ../Src/spi.c /home/bartek/MEGAsync/sensors-rtos2/Inc/spi.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h \
+ /home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/spi.h:
 
@@ -97,3 +98,5 @@ Src/spi.o: ../Src/spi.c /home/bartek/MEGAsync/sensors-rtos2/Inc/spi.h \
 /home/bartek/MEGAsync/sensors-rtos2/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 /home/bartek/MEGAsync/sensors-rtos2/Inc/gpio.h:
+
+/home/bartek/MEGAsync/sensors-rtos2/Inc/dma.h:
